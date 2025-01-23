@@ -22,8 +22,7 @@ This is a simple web app that you can use to score your darts games.
 ### Tasks
 
 + Swap out oche.png image
-+ Responsive Web Design
-+ UI: calculate a score for individual visits = sum of 3 throws
++ Finish Responsive Web Design
 + change "Throw Dart" button to say "Next Visit"
 + The remaining score must be available to see at all times.
 + We still need to add a safeguard that busts a player if they try to score a 0 on a single or treble score. 
@@ -36,8 +35,8 @@ This is a simple web app that you can use to score your darts games.
         + 12 Darts	60 57 0	117	3
 
 + UI: Find a way to not display empty checkout suggestion elements.
-+ UI: Change score button text D20 T20 20 according to multiplier text box
-+ UI: Apply a verticle scrollbar when necessary on the modal area
++ UI: Change score button text D20 T20 20 when multiplier checkboxes are applied
++ UI: Apply a vertical scrollbar when necessary on the modal area
 
 
 
@@ -78,6 +77,12 @@ This is a simple web app that you can use to score your darts games.
 + Add a "Restart" button to restart the game. We can probably change this to new game when we've achieved "game shot" and the remaining score is zero. Add a "New Game" button to start a new game. 
 
 + UI: Add a tally about how many darts have been thrown in each 3 dart visit.
+
++ UI: Calculate a score for individual visits = sum of 3 throws
+
++ Stylesheet developed using Sass - CSS Layout technique basics applied
+                
++ Modal styles - Generated using Cursor. - On this occasion that came at a point in my development where I'd like to start putting it online now and introduce improvements as and when they come.
 
 ### Suggestions from Cursor AI Chat
 
