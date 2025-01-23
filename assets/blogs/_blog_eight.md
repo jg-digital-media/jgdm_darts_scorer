@@ -1,6 +1,17 @@
 CSS Styling and UX
 
 
+I want to do a brief explainer of the the CSS and SCSS I've used to style the Darts Scorer App.
+
+First, the initial colour scheme for the app.  The scheme is based on the colours of the Darts oche. For now, I've settled on lighter versions of those colours and applied these to 2 Sass variables.
+
+```scss
+
+$bg---header:#ff9494; 
+$bg---body: #bfffc4; 
+
+```
+
 
 ```scss
 
@@ -11,7 +22,6 @@ CSS Styling and UX
         background: $bg---header;
     }
 
-
     header {
 
         background: $bg---header;
@@ -20,27 +30,69 @@ CSS Styling and UX
 
 ```
 
-a little bit of paddding on the header.
+I put on a little bit of padding on the header which contains the application title and author text.
 
-Next we have to make some decisions about how to style the score dispays in .game---status.
+I had to make some decisions about how to style the score dispays in `.game---status`.
 
 ```scss
+
 section.game---state {   
 
     .game---status {  
 
+        width: 100%;
+        text-align: center;
+
         #game---score {
 
             width: 100%;
+            /* border: solid 1px blue; */
+            text-align: center;
+            margin: 10px auto;
 
             #current---score {
 
-                display: inline-block;
-                text-align: center;
+                strong {
+
+                    font-size: 30pt;
+                    color: $col---tertiary;
+
+                    @media (max-width: $breakpoint---md) {
+
+                        font-size: 12pt;
+                    }
+                }
             }
         }
 
         .number---of---throws {
+
+            /* border: solid 1px green;   */ 
+            /* width: 200px; */
+            width: 25%;
+            display: inline-block;     
+            font-size: 25pt;   
+            color: $col---tertiary;
+
+            @media (max-width: $breakpoint---md) {
+
+                width: auto;
+                font-size: 12pt;
+            }
+
+            #dart---icon {
+
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                margin: 0 auto;
+                color: $col---tertiary;
+            }
+
+            span {
+
+                color: $col---tertiary;
+            }
 
         }
 
@@ -48,9 +100,20 @@ section.game---state {
 
             width: 100%;
 
+            display: inline-block;
+            font-size: 25pt;
+            color: $col---tertiary;
+
+            @media (max-width: $breakpoint---md) {
+
+                width: auto;
+                font-size: 12pt;
+            }
+
             div {
 
                 display: inline-block;
+                width: 44px;
             }
 
         }
@@ -70,27 +133,56 @@ section.game---state {
 
         .display---messages {
 
+            /* border: solid 1px yellow; */
+            height: 60px;
+            width: 100%;
+            text-align: center;
+
+            @media (max-width: $breakpoint---md) {
+
+                height: auto;
+                width: auto;
+            }
+
+            #js-message {  
+
+                display: inline-block;
+                width: 100%;
+                letter-spacing: 1px;
+                color: red;
+                font-size: 15pt;
+                /* padding: 0px 18px; */
+                margin: 10px 18px;
+                margin: 10px auto;
+            } 
+
+            .message {
+
+
+            }
 
         }   
 
     }
 
 }
+
 ```
 
+For the time being, I decided to stick with the basic layout options for CSS.
 
 ```scss
 
-.game---score {
+    .game---score {
 
-    width: 100%;
-    border: solid 1px blue;
-    text-align: center;
-    margin: 10px 0;
-}
+        width: 100%;
+        border: solid 1px blue;
+        text-align: center;
+        margin: 10px 0;
+    }
 ```
 
-Centralise the remaining score. with text align
+I centered the remaining score display with central text alignment
 
 ```scss
 
@@ -129,38 +221,66 @@ Centralise the remaining score. with text align
 }
 ```
 
+Lay the checkout scores side by side with inline-block which is what we're doing to keep as much of the interface above the fold as possible.
+
+```scss
 
  .checkout {
 
-                display: inline-block;
-                width: 100px;
+    display: inline-block;
+    width: 100px;
 
-                display: block;
-                width: 100%;
+    display: block;
+    width: 100%;
 
-                /* text-align: center; */
-                width: 100%;
-                font-size: 17pt;
-                font-weight: bold;
-                color: red;
-            }
-
-
-.display-messages.
-
-included a fixed height. This way we get no ui descrepancies in the when game status messages are dynamically removed.  #js-message is display none by default - which removes the space taken on the DOM. 
-
-#js-message {
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: red;
-    font-size: 15pt;
+    /* text-align: center; */
+    width: 100%;
+    font-size: 17pt;
     font-weight: bold;
-    padding: 10px 0;
+    color: red;
+}
+```
+
+I included a fixed height on `.display-messages`, the last element of the score displays. This way we get a more smooth UI until such a time as I redesign that part of the app, when the text content of this element when game status messages are dynamically removed.  `#js-message` is display none by default - which removes the space taken on the DOM. 
+
+```scss
+.display-messages {
+
+    /* border: solid 1px yellow; */
+    height: 60px;
+    width: 100%;
+    text-align: center;
+
+    #js-message {
+
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: red;
+        font-size: 15pt;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
 }
 
+```
 
+a line of buttons as interface 
+
+
+
+
+```scss
+#btn---home,
+    #btn---restart,
+    #btn---about,
+    .open---throw--history,
+    .btn---quit {
+    }
+
+```
+
+```scss
 
 .btn---quit {
 
@@ -179,9 +299,11 @@ included a fixed height. This way we get no ui descrepancies in the when game st
     transition: background .3s;
 }
 
+```
 
 Now that we've standardised these button styles... we should @extend them using sass.
 
+```scss
 %btn---main {
 
     display: inline-block;
@@ -209,19 +331,19 @@ Now that we've standardised these button styles... we should @extend them using 
 
 
 #btn---home,
-    #btn---restart,
-    #btn---about,
-    .btn---quit {
+#btn---restart,
+#btn---about,
+.btn---quit {
 
-        @extend %btn---main;
-    }
+    @extend %btn---main;
+}
+```
+
+One point of difference for the game on button  needs something to overrride the inlineblock in the extend. 
 
 
+```scss
 
-one point of difference for the game on button  needs something to overrride the inlineblock in the extend. 
-
-
-    
     #btn---game--on {
 
         @extend %btn---main;
@@ -230,35 +352,32 @@ one point of difference for the game on button  needs something to overrride the
 
     }
 
-
-
-    Score buttons 
-
-
+    // Score buttons 
     section.score---points--container {
-    width: 22%;
-    width: 190px;
-    text-align: center;
+
+        width: 22%;
+        width: 190px;
+        text-align: center;
 
     }
 
+    .score---points--container {
 
+        display: block;
+        width: 185px;
+        margin: 0 auto;
+        text-align: center;
 
-.score---points--container {
+        .score---points--btn {
 
-    display: block;
-    width: 185px;
-    margin: 0 auto;
-    text-align: center;
-
-    .score---points--btn {
-
-        @extend %btn---score--darts;
+            @extend %btn---score--darts;
+        }
     }
-}
+
+```
 
     
-
+```scss
 %btn---score--darts {
 
     display: inline-block;
@@ -266,11 +385,10 @@ one point of difference for the game on button  needs something to overrride the
 
     background: lightgreen;
 
-     &:hover {
+    &:hover {
 
         background: #ff5959;
     }
-
 
 }
 
@@ -285,30 +403,35 @@ one point of difference for the game on button  needs something to overrride the
     text-align: center;
 }
 
-I also switched the #throw--dart--btn button and the multipliers to try and make this a better UI experience.
+```
+
+I also switched the #throw--dart--btn button and the multipliers to try and make this a better UI experience. The natural flow will be to select, a multiplier checkbox click a score burron and then click to "throw" the dart.
 
 ```html
- <section class="score---multipliers">
+<section class="score---multipliers">
 
-        <label for="triple---point--score">Apply Triple Score</label>
-        <input type="checkbox" id="triple---point--score" class="score---multiplier">
-        <label for="double---point--score">Apply Double Score</label>
-        <input type="checkbox" id="double---point--score" class="score---multiplier">
+    <label for="triple---point--score">Apply Triple Score</label>
+    <input type="checkbox" id="triple---point--score" class="score---multiplier">
+    <label for="double---point--score">Apply Double Score</label>
+    <input type="checkbox" id="double---point--score" class="score---multiplier">
 
-    </section>
+</section>
     
-    <a href="#" class="throw---dart" id="btn---throw--dart">Throw Dart &gt;</a>
+<a href="#" class="throw---dart" id="btn---throw--dart">Throw Dart &gt;</a>
 
 ```
 
-
-
-.modal  
+Styling the modal
 
 ```PROMPT: we need to make the modal look nicer, be more imposing on the screen and not push the content below it in the document tree further down the screen
 ```
 
+I did ask the question on the Cursor AI for this one. I did get a good outcome and I justfied it to myself because I wanted to speed up getting this app deployed to the web, and this repository.
+
+The is a monocromatic colour scheme and good padding for the table.  It's something I'll look at in the future, whether I can add a more colourful scheme suited for the app.
+
 ```scss
+
 /* Modal styles */
 .modal {
     display: none;
@@ -322,6 +445,7 @@ I also switched the #throw--dart--btn button and the multipliers to try and make
 }
 
 .modal-content {
+
     position: relative;
     background-color: #fefefe;
     margin: 10% auto;  /* Center vertically and horizontally */
@@ -334,6 +458,7 @@ I also switched the #throw--dart--btn button and the multipliers to try and make
 
 /* Close button */
 .close {
+
     position: absolute;
     top: 10px;
     right: 15px;
@@ -345,12 +470,14 @@ I also switched the #throw--dart--btn button and the multipliers to try and make
 
 .close:hover,
 .close:focus {
+
     color: #333;
     text-decoration: none;
 }
 
 /* Table styles within modal */
 #score---table {
+
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
@@ -358,20 +485,43 @@ I also switched the #throw--dart--btn button and the multipliers to try and make
 
 #score---table th,
 #score---table td {
+
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 #score---table th {
+
     background-color: #f5f5f5;
     font-weight: bold;
 }
 
 #score---table tr:hover {
+
     background-color: #f9f9f9;
 }
 
 ```
 
+For the score buttons, i thought an inner shadow which gives them a distinctive look compared to the standard application buttons. And used the colour scheme of the the other buttons - to differentiate them.
 
+```scss
+
+.score---points--container {
+
+    display: block;
+    width: 185px;
+    margin: 0 auto;
+    text-align: center;
+
+    .score---points--btn {
+
+        @extend %btn---score--darts;
+    }
+}
+```
+
+The styles I've used above are a starting point that get the project up and running now and make incremental changes and updates in future.
+
+That's why on 23-01-2025, I moved the development of the app to this [Repository](https://github.com/jg-digital-media/jgdm_darts_scorer/)
