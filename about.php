@@ -30,7 +30,7 @@
 
         <ul class="blog---list">
 
-            <li><a href="#" target="_blank" class="blog---links">Blog: 1 - Wireframes, Algorithmic Thinking and discussing the planning phase</a></li>
+            <li><a href="https://github.com/jg-digital-media/jgdm_darts_scorer/blob/main/assets/blogs/_blog_one.md" target="_blank" class="blog---links">Blog: 1 - Wireframes, Algorithmic Thinking and discussing the planning phase</a></li>
             
             <!-- <li><a href="#" target="_blank" class="blog---links">Blog: 2 - Development begins: Implementing the basic scoring logic</a></li> -->
             
