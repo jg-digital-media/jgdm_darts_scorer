@@ -1,0 +1,473 @@
+/* _config.scss */
+/*
+
+Last Updated: 22-01-2025 - 17:31
+*/
+/* main.scss */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  background: #bfffc4;
+}
+
+header {
+  background: #ff9494;
+  padding: 10pt 0;
+  border-bottom: 2px #9d0909 solid;
+}
+header h1, header h2 {
+  text-align: center;
+}
+header h2 {
+  font-size: 16px;
+}
+header h1 {
+  text-align: center;
+  font-size: 32px;
+}
+header h1 #app_version {
+  font-size: 10px;
+  vertical-align: bottom;
+}
+
+section {
+  /* margin: 30pt auto; */
+  /* margin: 14pt auto; */
+  margin: 2px auto;
+}
+section p {
+  font-weight: bold;
+  display: block;
+  width: auto;
+  margin: 0 auto;
+}
+section img {
+  display: block;
+  margin: 35px auto;
+  border-radius: 8px;
+  /* width: 800px; */
+  /* width: 35%; */
+  width: 320px;
+}
+section p {
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  width: 230px;
+  margin: 45pt auto;
+  line-height: 1.5;
+}
+section #btn---game--on {
+  display: block !important;
+}
+
+section.game---state #app---logo--gamestate {
+  display: block;
+  margin: 0 auto;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+section.game---state .game---status {
+  width: 100%;
+  text-align: center;
+}
+section.game---state .game---status .game---score {
+  /* border: solid 1px blue; */
+  text-align: center;
+  margin: 10px auto;
+}
+section.game---state .game---status .game---score #current---score strong {
+  font-size: 30pt;
+  color: #d10d2e;
+}
+@media (max-width: 660px) {
+  section.game---state .game---status .game---score #current---score strong {
+    font-size: 12pt;
+  }
+}
+section.game---state .game---status .number---of---throws {
+  /* border: solid 1px green;   */
+  /* width: 200px; */
+  width: 25%;
+  display: inline-block;
+  font-size: 25pt;
+  color: #d10d2e;
+}
+@media (max-width: 660px) {
+  section.game---state .game---status .number---of---throws {
+    width: auto;
+    font-size: 12pt;
+  }
+}
+section.game---state .game---status .number---of---throws #dart---icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  color: #d10d2e;
+}
+section.game---state .game---status .number---of---throws span {
+  color: #d10d2e;
+}
+section.game---state .game---status .tally---throws {
+  /* width: 100%; */
+  /* border: solid 1px orange; */
+  /* width: 100%; */
+  /* border: solid 1px orange; */
+  /* width: 200px; */
+  /* width: 20%; */
+  display: inline-block;
+  font-size: 25pt;
+  color: #d10d2e;
+}
+@media (max-width: 660px) {
+  section.game---state .game---status .tally---throws {
+    width: auto;
+    font-size: 12pt;
+  }
+}
+section.game---state .game---status .tally---throws div {
+  display: inline-block;
+  width: 44px;
+}
+section.game---state .game---status div#trows---total {
+  margin-left: 40px;
+}
+section.game---state .game---status .points---to--checkout {
+  display: block;
+  width: auto;
+  /* border: solid 1px red; */
+  text-align: center;
+  /* height: 110px; */
+  height: 110px;
+  height: auto;
+  height: 50px;
+  margin: 8px auto;
+}
+section.game---state .game---status .points---to--checkout h3 {
+  text-align: center;
+}
+section.game---state .game---status .points---to--checkout .checkout {
+  display: inline-block;
+  /* text-align: center; */
+  font-size: 17pt;
+  font-weight: bold;
+  margin: 5px 13px;
+  color: red;
+}
+@media (max-width: 660px) {
+  section.game---state .game---status .points---to--checkout .checkout {
+    height: auto;
+    width: auto;
+    font-size: 9pt;
+    font-weight: bold;
+  }
+}
+section.game---state .game---status .display---messages {
+  /* border: solid 1px yellow; */
+  height: 60px;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 660px) {
+  section.game---state .game---status .display---messages {
+    height: auto;
+    width: auto;
+  }
+}
+section.game---state .game---status .display---messages #js-message {
+  display: inline-block;
+  width: 100%;
+  letter-spacing: 1px;
+  color: red;
+  font-size: 15pt;
+  /* padding: 0px 18px; */
+  margin: 10px 18px;
+  margin: 10px auto;
+}
+section.game---state .game---status .display---messages .message .btn---quit:hover {
+  background-color: #d10d2e;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+section.about--the--app {
+  border: solid 1px black;
+}
+section.about--the--app #app_intro {
+  margin: 25px auto;
+  border-radius: 8px;
+  width: 500px;
+}
+section.about--the--app #app_intro img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 8px;
+  border: solid 1px #d10d2e;
+  padding: 10px;
+  box-shadow: inset #d10d2e 0px 0px 3px 2px;
+}
+section.about--the--app h1, section.about--the--app h2, section.about--the--app h3 {
+  margin: 0 auto;
+  width: 537px;
+  text-decoration: underline;
+}
+section.about--the--app p {
+  margin: 0 auto;
+}
+section.about--the--app ul {
+  width: 537px;
+  margin: 20px auto;
+}
+section.about--the--app ul li {
+  display: inline-block;
+  line-height: 1.9;
+  width: 80%;
+}
+section.about--the--app ul li a {
+  color: #d10d2e;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+section.about--the--app ul li a:hover {
+  color: #000000;
+}
+
+section.development---log {
+  border: solid 1px red;
+}
+section.development---log article {
+  display: block;
+  margin: 0 auto;
+  width: 475px;
+  background: lightgreen;
+  font-size: 12px;
+  line-height: 1.9;
+}
+section.development---log article .log---header {
+  text-align: right;
+  font-weight: bold;
+}
+section.development---log article ul.dev---log {
+  width: 400px;
+  margin: 20px auto;
+}
+section.development---log article ul.dev---log li {
+  display: inline-block;
+  line-height: 1.9;
+  width: 96%;
+}
+section.development---log article ul.dev---log li a {
+  color: #d10d2e;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+section.development---log article ul.dev---log li a:hover {
+  color: #000000;
+}
+section.development---log article .dev---log {
+  list-style-type: disc;
+  margin-left: 20px;
+  line-height: 1.6;
+}
+section.development---log article .dev---log > li {
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+}
+section.development---log article .dev---log > li > ul {
+  margin-top: 8px;
+  margin-left: 20px;
+  list-style-type: circle;
+}
+section.development---log article .dev---log > li > ul > li {
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #666;
+  font-size: 0.95em;
+}
+
+#modal {
+  display: none;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  z-index: 1000; /* Ensure modal stays on top */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 10% auto; /* Center vertically and horizontally */
+  padding: 20px;
+  width: 80%;
+  max-width: 600px; /* Limit maximum width */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Table styles within modal */
+#score---table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+#score---table th,
+#score---table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#score---table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+#score---table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.score---points--container {
+  display: block;
+  width: 408px;
+  margin: 10px auto;
+  text-align: center;
+}
+@media (max-width: 660px) {
+  .score---points--container {
+    width: 90%;
+  }
+}
+.score---multipliers {
+  text-align: center;
+}
+
+footer {
+  margin-top: 20pt;
+  text-align: center;
+  font-size: 10px;
+}
+footer a {
+  color: #d10d2e;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: #105e2f;
+}
+
+.application---buttons {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 660px) {
+  .application---buttons {
+    margin: 20pt auto;
+  }
+}
+section #btn---game--on, section.game---state .game---status .display---messages .message .btn---quit, .application---buttons #btn---home,
+.application---buttons #btn---restart,
+.application---buttons #btn---about,
+.application---buttons .open---throw--history,
+.application---buttons .btn---quit {
+  /* display: inline-block; */
+  /* margin: 15px auto; */
+  width: 115px;
+  padding: 10px;
+  background-color: #105e2f;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s;
+}
+section #btn---game--on:hover, section.game---state .game---status .display---messages .message .btn---quit:hover, .application---buttons #btn---home:hover,
+.application---buttons #btn---restart:hover,
+.application---buttons #btn---about:hover,
+.application---buttons .open---throw--history:hover,
+.application---buttons .btn---quit:hover {
+  background-color: #d10d2e;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+section #btn---game--on {
+  margin: 15px auto;
+}
+
+.score---points--container .score---points--btn {
+  display: inline-block;
+  width: 50px;
+  background: lightgreen;
+  background: #105e2f;
+  color: white;
+  text-decoration: none;
+  margin: 3px 0;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: inset black 0px 0px 3px 2px;
+  text-decoration: none;
+}
+.score---points--container .score---points--btn:hover {
+  background: #ff5959;
+  background: #d10d2e;
+}
+
+#btn---throw--dart {
+  display: block;
+  margin: 20px auto;
+  width: 140px;
+  text-align: center;
+  background: beige;
+  border: solid black 2px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.4s;
+}
+#btn---throw--dart:hover {
+  background: #eaeab4;
+}
+
+/*# sourceMappingURL=style.css.map */

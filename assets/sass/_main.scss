@@ -1,0 +1,555 @@
+/* main.scss */
+* {
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+
+    font-family: $font---family;
+    color: $col---primary;    
+    background: $bg---body;
+}
+
+
+header {
+
+    background: $bg---header;
+    padding: 10pt 0;
+    border-bottom: 2px #9d0909 solid;
+
+    h1, h2 {
+
+        text-align: center;
+    }
+
+    h2 {
+
+        font-size: $font---size--h2;
+
+    }
+        
+    h1 {
+
+        text-align: center;
+        font-size: $font---size--h1;
+
+        #app_version {
+
+            font-size: 10px;
+            vertical-align: bottom;
+        }
+    }
+}
+
+section {
+
+    /* margin: 30pt auto; */
+    /* margin: 14pt auto; */
+    margin: 2px auto;
+
+    p {
+
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 0 auto;
+
+    }
+
+    img {
+
+        display: block;
+        margin: 35px auto;
+        border-radius: 8px;
+        /* width: 800px; */
+        /* width: 35%; */
+        width: 320px;
+    }
+
+    p {
+
+        font-size: 16px;
+        text-align: center;    
+        display: block;
+        width: 230px;
+        margin: 45pt auto;
+        line-height: 1.5;
+    }
+
+    #btn---game--on {
+
+        @extend %btn---game--on;
+
+        display: block !important;
+
+    }
+
+}
+
+section.game---state {
+    
+    #app---logo--gamestate {
+
+        display: block;
+        margin: 0 auto;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+    }
+
+    .game---status {
+
+        width: 100%;
+        text-align: center;
+    
+        .game---score {
+
+            /* border: solid 1px blue; */
+            text-align: center;
+            margin: 10px auto;
+
+
+            #current---score {
+
+                strong {
+
+                    font-size: 30pt;
+                    color: $col---tertiary;
+
+                    @media (max-width: $breakpoint---md) {
+
+                        font-size: 12pt;
+                    }
+                }
+            }
+        }
+
+        .number---of---throws {
+
+            /* border: solid 1px green;   */ 
+            /* width: 200px; */
+            width: 25%;
+            display: inline-block;     
+            font-size: 25pt;   
+            color: $col---tertiary;
+
+            @media (max-width: $breakpoint---md) {
+
+                width: auto;
+                font-size: 12pt;
+            }
+
+            #dart---icon {
+
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                margin: 0 auto;
+                color: $col---tertiary;
+            }
+
+            span {
+
+                color: $col---tertiary;
+            }
+
+        }
+
+        .tally---throws {
+
+            /* width: 100%; */
+            /* border: solid 1px orange; */
+            /* width: 100%; */
+            /* border: solid 1px orange; */
+            /* width: 200px; */
+            /* width: 20%; */
+            display: inline-block;
+            font-size: 25pt;
+            color: $col---tertiary;
+
+            @media (max-width: $breakpoint---md) {
+
+                width: auto;
+                font-size: 12pt;
+            }
+
+            div {
+
+                display: inline-block;
+                width: 44px;
+            }
+
+        }
+
+        div#trows---total {
+
+            margin-left: 40px;
+
+        }
+
+        .points---to--checkout {
+
+            display: block;
+            width: auto;
+            /* border: solid 1px red; */
+            text-align: center;
+            /* height: 110px; */
+            height: 110px;
+            height: auto;
+            height: 50px;
+            margin: 8px auto;
+            
+             
+            h3 {
+
+                text-align: center;
+            }
+
+            .checkout {
+
+                display: inline-block;
+
+                /* text-align: center; */
+                font-size: 17pt;
+                font-weight: bold;
+                margin: 5px 13px;
+                color: red;
+
+                @media (max-width: $breakpoint---md) {
+
+                    height: auto;
+                    width: auto;
+                    font-size: 9pt;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+        .display---messages {
+
+            /* border: solid 1px yellow; */
+            height: 60px;
+            width: 100%;
+            text-align: center;
+
+            @media (max-width: $breakpoint---md) {
+
+                height: auto;
+                width: auto;
+            }
+
+            #js-message {  
+
+                display: inline-block;
+                width: 100%;
+                letter-spacing: 1px;
+                color: red;
+                font-size: 15pt;
+                /* padding: 0px 18px; */
+                margin: 10px 18px;
+                margin: 10px auto;
+            }   
+
+            .message {
+
+                .btn---quit {                   
+
+                    @extend %btn---main;
+            
+                    &:hover {
+            
+                        background-color: $bg---btn--hover-one;
+                        color: $col---secondary;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+
+        }
+        
+    }
+
+}
+
+section.about--the--app {
+
+    border: solid 1px black;
+
+    #app_intro {
+
+        margin: 25px auto;
+        border-radius: 8px;
+        width: 500px;
+
+        img {
+
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 8px;
+            border: solid 1px $col---tertiary;
+            padding: 10px;
+            box-shadow: inset $col---tertiary 0px 0px 3px 2px;
+        }
+    }
+
+    h1, h2, h3 {
+
+        margin: 0 auto;
+        width: 537px;
+        text-decoration: underline;
+    }
+
+    p {
+
+        margin: 0 auto;
+    }
+
+    ul {
+
+        width: 537px;
+        margin: 20px auto;
+
+        li {
+
+            display: inline-block;
+            line-height: 1.9;
+            width: 80%;
+
+            a {
+
+                color: $col---tertiary;
+                text-decoration: none;
+                transition: color .2s;
+
+                &:hover {
+
+                    color: $col---primary;
+                }
+            }
+        }
+    }
+
+}
+
+section.development---log {
+
+    border: solid 1px red;
+
+    article {
+
+        display: block;
+        margin: 0 auto;
+        width: 475px;
+        background: lightgreen;
+        font-size: 12px;    
+        line-height: 1.9;       
+        
+        .log---header {
+
+            text-align: right;
+            font-weight: bold;
+
+        }
+
+        ul.dev---log {
+
+            width: 400px;
+            margin: 20px auto;
+    
+            li {
+    
+                display: inline-block;
+                line-height: 1.9;
+                width: 96%;
+    
+                a {
+    
+                    color: $col---tertiary;
+                    text-decoration: none;
+                    transition: color .2s;
+    
+                    &:hover {
+    
+                        color: $col---primary;
+                    }
+
+                }
+
+            }        
+
+        }
+
+        .dev---log {
+            list-style-type: disc;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+        
+        .dev---log > li {
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .dev---log > li > ul {
+            margin-top: 8px;
+            margin-left: 20px;
+            list-style-type: circle;
+        }
+        
+        .dev---log > li > ul > li {
+            margin-bottom: 5px;
+            font-weight: normal;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+    }
+
+}
+
+#modal {
+
+    display: none;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;  /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent overlay */
+    z-index: 1000;  /* Ensure modal stays on top */
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;  /* Center vertically and horizontally */
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;  /* Limit maximum width */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Table styles within modal */
+#score---table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#score---table th,
+#score---table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#score---table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+#score---table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.score---points--container {
+
+    display: block;    
+    width: 408px;
+    margin: 10px auto;
+    text-align: center;
+
+    @media (max-width: $breakpoint---md) {
+
+        width: 90%;
+    }
+
+    .score---points--btn {
+
+        @extend %btn---score--darts;
+    }
+}
+
+
+#btn---throw--dart {
+
+    @extend %btn---dart--throw;
+
+}
+
+.score---multipliers {
+    
+    text-align: center;
+}
+
+footer {
+
+    margin-top: 20pt;
+    text-align: center;
+    font-size: 10px;
+
+    a {
+
+        color: $col---link--color-primary;
+        transition: color .2s;
+
+        &:hover {
+
+            color: $col---link--color-primary-hover;
+        }
+
+    }
+
+}
+
+.application---buttons {
+
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    @media (max-width: $breakpoint---md) {
+
+        margin: 20pt auto;
+        
+    }
+
+    #btn---home,
+    #btn---restart,
+    #btn---about,
+    .open---throw--history,
+    .btn---quit {
+
+        @extend %btn---main;
+    }
+}
