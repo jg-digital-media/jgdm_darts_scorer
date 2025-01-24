@@ -2,6 +2,8 @@
 
 This is a simple web app that you can use to score your darts games.
 
+Link: https://projects.jonniegrieve.co.uk/darts_scorer_app
+
 ## version 1.0 
 
 ### Planning
