@@ -1,7 +1,7 @@
 /* _config.scss */
 /*
 
-Last Updated: 28-01-2025 - 14:47
+Last Updated: 28-01-2025 - 15:31
 */
 /* main.scss */
 * {
@@ -227,6 +227,11 @@ section.about--the--app #app_intro {
   border-radius: 8px;
   width: 500px;
 }
+@media (max-width: 660px) {
+  section.about--the--app #app_intro {
+    width: 90%;
+  }
+}
 section.about--the--app #app_intro img {
   display: block;
   margin: 0 auto;
@@ -240,6 +245,11 @@ section.about--the--app h1, section.about--the--app h2, section.about--the--app 
   margin: 0 auto;
   width: 537px;
   text-decoration: underline;
+}
+@media (max-width: 660px) {
+  section.about--the--app h1, section.about--the--app h2, section.about--the--app h3 {
+    width: 90%;
+  }
 }
 section.about--the--app p {
   margin: 0 auto;
@@ -255,10 +265,20 @@ section.about--the--app ul {
   width: 537px;
   margin: 20px auto;
 }
+@media (max-width: 660px) {
+  section.about--the--app ul {
+    width: 90%;
+  }
+}
 section.about--the--app ul li {
   display: inline-block;
   line-height: 1.9;
   width: 80%;
+}
+@media (max-width: 660px) {
+  section.about--the--app ul li {
+    width: 95%;
+  }
 }
 section.about--the--app ul li a {
   color: #d10d2e;
