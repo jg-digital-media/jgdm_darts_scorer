@@ -338,6 +338,18 @@ section.about--the--app {
     p {
 
         margin: 0 auto;
+
+        a {
+
+            color: $col---link--color-primary;
+
+            transition: color .2s;
+
+            &:hover {
+
+               color: $col---link--color-primary-hover;
+            }
+        }
     }
 
     ul {
