@@ -11,8 +11,9 @@
 
     <header>
 
-        <h1>Darts Scorer App (AI) <span id="app_version"><a href="log.php">v1.1</a></span></h1>
+        <h1>Darts Scorer App (AI) <span id="app_version"><a href="log.php">v1.1.1</a></span></h1>
         <h2>by Jonnie Grieve Digital Media</h2>
+        <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank" id="app_repo">Repository</a>
 
     </header>
 
@@ -23,6 +24,8 @@
         <br /><br />I created a series of blogs to explain the code and the process of creating this app.
         
         <br /><br />This is the first version of the app. I intend to make incremental changes as time goes on.</p>
+
+        <p>You can track the progress of the app or clone the latest version to your system via <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank">GitHub</a>.</p>
         
         <p><h3>Blogs</h3></p>
 
