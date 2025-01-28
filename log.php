@@ -25,12 +25,24 @@
         <article>
 
             <div class="log---header">
+                <span class="log---version">v1.1.1</span>
+                <span class="log---date">28/01/2025</span>
+            </div>
+
+            <ul class="dev---log">
+
+            <li>Add link to repository on log.php</li>   
+            <li>Add link to repository in website header</li>               
+
+            </ul>
+
+            <div class="log---header">
                 <span class="log---version">v1.1</span>
                 <span class="log---date">23/01/2025</span>
             </div>
 
             <ul class="dev---log">
-                <li>This application was developed over 2 weeks.  It is largely functional though some known bugs still remain. Initial development notes are below.
+                <li>This application was developed over 2 weeks.  It is largely functional though some known bugs still remain. Initial development notes are below.</li>
                 <li>Ensure that only one checkbox (Double or Triple) is checked at a time</li>
                 <li>Check bugs with scoring with Edge Cases
                     <ul>
