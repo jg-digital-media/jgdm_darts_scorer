@@ -32,8 +32,9 @@
 
             <ul class="dev---log">
 
-            <li>Add link to repository on log.php</li>   
-            <li>Add link to repository in website header</li>               
+                <li>Add link to repository on log.php</li>   
+                <li>Add link to repository in website header</li> 
+                <li>Fixes horizontal scroll on medium breakpoints and lower</li>               
 
             </ul>
 
