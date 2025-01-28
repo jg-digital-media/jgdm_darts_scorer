@@ -34,6 +34,28 @@ header h1 #app_version {
   font-size: 10px;
   vertical-align: bottom;
 }
+header h1 #app_version a {
+  color: #d10d2e;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+header h1 #app_version a:hover {
+  color: #000000;
+}
+header #app_repo {
+  display: block;
+  width: 80px;
+  color: white;
+  text-align: center;
+  margin: 6px auto;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: italic;
+  transition: color 0.3s;
+}
+header #app_repo:hover {
+  color: #000000;
+}
 
 section {
   /* margin: 30pt auto; */
