@@ -1,7 +1,7 @@
 /* _config.scss */
 /*
 
-Last Updated: 22-01-2025 - 17:31
+Last Updated: 28-01-2025 - 14:47
 */
 /* main.scss */
 * {
@@ -243,6 +243,13 @@ section.about--the--app h1, section.about--the--app h2, section.about--the--app 
 }
 section.about--the--app p {
   margin: 0 auto;
+}
+section.about--the--app p a {
+  color: #d10d2e;
+  transition: color 0.2s;
+}
+section.about--the--app p a:hover {
+  color: #105e2f;
 }
 section.about--the--app ul {
   width: 537px;
