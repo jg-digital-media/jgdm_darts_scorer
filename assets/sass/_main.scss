@@ -316,6 +316,12 @@ section.about--the--app {
         border-radius: 8px;
         width: 500px;
 
+        @media (max-width: $breakpoint---md) {
+
+            width: 90%; 
+            
+        }
+
         img {
 
             display: block;
@@ -333,6 +339,11 @@ section.about--the--app {
         margin: 0 auto;
         width: 537px;
         text-decoration: underline;
+
+        @media (max-width: $breakpoint---md) {
+
+            width: 90%;
+        }
     }
 
     p {
@@ -357,11 +368,21 @@ section.about--the--app {
         width: 537px;
         margin: 20px auto;
 
+        @media (max-width: $breakpoint---md) {
+
+            width: 90%;
+        }
+
         li {
 
             display: inline-block;
             line-height: 1.9;
             width: 80%;
+
+            @media (max-width: $breakpoint---md) {
+
+                width: 95%;
+            }
 
             a {
 
