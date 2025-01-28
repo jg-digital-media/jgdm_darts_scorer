@@ -39,6 +39,37 @@ header {
 
             font-size: 10px;
             vertical-align: bottom;
+
+            a {
+
+                color: $col---tertiary;
+                text-decoration: none;
+                transition: color .3s;
+
+                &:hover {
+
+                    color: $col---primary;
+                }
+            }
+        }
+    }
+
+    #app_repo {
+
+        display: block;
+        width: 80px;
+        color: white;
+        text-align: center;
+        margin: 6px auto;
+        font-size: 10px;
+        font-weight: bold;
+        font-style: italic;
+
+        transition: color .3s;
+
+        &:hover {
+
+            color: #000000;
         }
     }
 }
