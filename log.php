@@ -11,7 +11,7 @@
 
     <header>
 
-        <h1>Darts Scorer App (AI) <span id="app_version">v1.1.1</span></h1>
+        <h1>Darts Scorer App (AI) <span id="app_version">v1.2.1</span></h1>
         <h2>by Jonnie Grieve Digital Media</h2>
         <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank" id="app_repo">Repository</a>
 
@@ -24,6 +24,18 @@
         <a href="game.php" class="button" id="btn---game--on">Game On</a>
 
         <article>
+
+            <div class="log---header">
+                <span class="log---version">v1.2.1</span>
+                <span class="log---date">13/02/2025</span>
+            </div>
+
+            <ul class="dev---log">
+
+                <li>Change the score button text to match checkout suggestion notation:  e.g. 20 D20 T20</li>   
+                <li>Removes filestamps from pages - game.php index.php about.php </li>         
+
+            </ul>
 
             <div class="log---header">
                 <span class="log---version">v1.1.1</span>
@@ -91,8 +103,6 @@
         <h3>by <a href="">Jonnie Grieve Digital Media</a></h3> 
 
         </footer>
-
-    <p>index.php</p>
     
     <script src="app.js" type="text/javascript"></script>
 
