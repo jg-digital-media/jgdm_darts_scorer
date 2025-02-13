@@ -65,21 +65,19 @@ function updateButtonText() {
             button.setAttribute('data-original-value', originalValue);
         }
         
-       // Skip MISS, bull and outer bull
-       if (originalValue === 'MISS' || originalValue === '50' || originalValue === '25') return;
+        // Skip MISS, bull and outer bull
+        if (originalValue === 'MISS' || originalValue === '50' || originalValue === '25') return;
         
         const baseValue = parseInt(originalValue);
-        let displayValue = baseValue;
         
+        // Update display text with prefix
         if (tripleCheckbox.checked) {
-            displayValue = baseValue * 3;
+            button.textContent = `T${baseValue}`;
         } else if (doubleCheckbox.checked) {
-            displayValue = baseValue * 2;
+            button.textContent = `D${baseValue}`;
         } else {
-            displayValue = baseValue; // Reset to original value
+            button.textContent = baseValue; // Reset to original value
         }
-        
-        button.textContent = displayValue;
     });
 }
 
