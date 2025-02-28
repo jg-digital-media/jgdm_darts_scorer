@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,7 +29,7 @@
     <meta name="twitter:card" content="footbal_score_comparator">
     
     <!-- Add Favicon -->
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
     
     <!-- Canonical link -->
     <link rel="canonical" href="https://projects.jonniegrieve.co.uk/darts_scorer_app/log.php">
