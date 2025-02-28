@@ -68,9 +68,9 @@
             
         <br /><br />I created a series of blogs to explain the code and the process of creating this app.
         
-        <br /><br />This is the first version of the app. I intend to make incremental changes as time goes on.</p>
-
-        <p>You can track the progress of the app or clone the latest version to your system via <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank">GitHub</a>.</p>
+        <br /><br />This is the first version of the app. I intend to make incremental changes as time goes on.
+        
+        <br /><br />You can track the progress of the app or clone the latest version to your system via <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank">GitHub</a>.</p>
         
         <p><h3>Blogs</h3></p>        
 
