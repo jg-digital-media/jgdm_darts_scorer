@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darts Scorer App (AI) by Jonnie Grieve Digital Media</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="pdf-downloadable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9WB623MVP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N9WB623MVP');
+    </script>
+
+    <!-- Google Font(s) -->
+    <link href="" rel="stylesheet">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="This is a simple web application that you can use to score your Darts matches as they'ew being played. Get a game on">
+    <meta name="keywords" content="darts games, darts app, score, scoring, darts scoring darts scoring app, darts scorer, ai, machine learning">
+    <meta name="image" content="htttps://projects.jonniegrieve.co.uk/darts_scorer_app/assets/images/app-image.pn">
+
+    <!-- FACEBOOK: Open Graph -->
+    <meta property="og:title" content="Darts Scorer App (AI) by Jonnie Grieve Digital Media">
+    <meta property="og:description" content="This is a simple web application that you can use to score your Darts matches as they'ew being played. Get a game on">
+    <meta property="og:image" content="htttps://projects.jonniegrieve.co.uk/darts_scorer_app/assets/images/app-image.png">
+    <meta property="og:url" content="https://projects.jonniegrieve.co.uk/darts_scorer_app/game.php">
+
+    <!-- TWITTER: Open Graph -->
+    <meta name="twitter:title" content="Darts Scorer App (AI) by Jonnie Grieve Digital Media">
+    <meta name="twitter:description" content="This is a simple web application that you can use to score your Darts matches as they'ew being played. Get a game on">
+    <meta name="twitter:image" content="htttps://projects.jonniegrieve.co.uk/darts_scorer_app/assets/images/app-image.png">
+    <meta name="twitter:card" content="footbal_score_comparator">
+
+    <!-- Add Favicon -->
+    <link rel="icon" href="icon.png" type="image/png">
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://projects.jonniegrieve.co.uk/darts_scorer_app/game.php">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- Page Title-->
+    <title>Game On | Darts Scorer App (AI) by Jonnie Grieve Digital Media</title>
+
 </head>
 <body> 
     
