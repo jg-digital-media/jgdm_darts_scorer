@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -67,11 +67,15 @@
             <ul class="dev---log">
 
                 <li>Add meta tags</li>   
-                <li>Add first favicon</li>
-                <li></li>         
+                <li>Add JGDM logo - favicon</li>
+                <li>Improvements to about.php styling</li>  
+                <li>Seperate blog entry containers - log.php</li>         
 
             </ul>
 
+        </article>
+
+        <article>
             <div class="log---header">
                 <span class="log---version">v1.2.1</span>
                 <span class="log---date">13/02/2025</span>
@@ -83,6 +87,10 @@
                 <li>Removes filestamps from pages - game.php index.php about.php </li>         
 
             </ul>
+
+        </article>
+
+        <article>    
 
             <div class="log---header">
                 <span class="log---version">v1.1.1</span>
@@ -96,6 +104,10 @@
                 <li>Fixes horizontal scroll on medium breakpoints and lower</li>               
 
             </ul>
+
+        </article>
+
+        <article>    
 
             <div class="log---header">
                 <span class="log---version">v1.1</span>
@@ -119,7 +131,6 @@
                         <li>It even takes into account the 2 checkboxes that double and triple the score values.</li>
                     </ul>
                 </li>
-
                 <li>Basic safeguards against trying a "bust" shot.</li>
                 <li>Basic alert box that announces a "game shot" against trying a "bust" shot.</li>
                 <li>Safeguard against trying to "bust" a score on anything other than a double score.</li>

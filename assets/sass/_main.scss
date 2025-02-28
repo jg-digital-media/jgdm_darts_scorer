@@ -417,16 +417,21 @@ section.development---log {
     article {
 
         display: block;
-        margin: 0 auto;
+        margin: 4px auto;
         width: 475px;
         background: lightgreen;
         font-size: 12px;    
-        line-height: 1.9;       
+        line-height: 1.9;             
+        border: solid 1px #c9bfbf;
+        border-radius: 4px;  
         
         .log---header {
 
             text-align: right;
             font-weight: bold;
+            position: relative;
+            right: 10px;
+            top: 2px;
 
         }
 
