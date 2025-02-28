@@ -1,7 +1,7 @@
 /* _config.scss */
 /*
 
-Last Updated: 28-01-2025 - 15:31
+Last Updated: 28-02-2025 - 11:09
 */
 /* main.scss */
 * {
@@ -80,7 +80,7 @@ section p {
   font-size: 16px;
   text-align: center;
   display: block;
-  width: 230px;
+  width: 80%;
   margin: 45pt auto;
   line-height: 1.5;
 }
@@ -220,12 +220,19 @@ section.game---state .game---status .display---messages .message .btn---quit:hov
 }
 
 section.about--the--app {
-  border: solid 1px black;
+  /* border: solid 1px black; */
+  width: 640px;
+}
+@media (max-width: 660px) {
+  section.about--the--app {
+    width: 90%;
+  }
 }
 section.about--the--app #app_intro {
   margin: 25px auto;
   border-radius: 8px;
-  width: 500px;
+  width: 80%;
+  text-align: left;
 }
 @media (max-width: 660px) {
   section.about--the--app #app_intro {
@@ -242,8 +249,9 @@ section.about--the--app #app_intro img {
   box-shadow: inset #d10d2e 0px 0px 3px 2px;
 }
 section.about--the--app h1, section.about--the--app h2, section.about--the--app h3 {
-  margin: 0 auto;
-  width: 537px;
+  margin: 10px auto;
+  /* width: 537px; */
+  width: 80%;
   text-decoration: underline;
 }
 @media (max-width: 660px) {
@@ -252,7 +260,8 @@ section.about--the--app h1, section.about--the--app h2, section.about--the--app 
   }
 }
 section.about--the--app p {
-  margin: 0 auto;
+  margin: 15px auto;
+  text-align: left;
 }
 section.about--the--app p a {
   color: #d10d2e;
@@ -262,7 +271,8 @@ section.about--the--app p a:hover {
   color: #105e2f;
 }
 section.about--the--app ul {
-  width: 537px;
+  /*width: 537px; */
+  width: 80%;
   margin: 20px auto;
 }
 @media (max-width: 660px) {

@@ -104,7 +104,7 @@ section {
         font-size: 16px;
         text-align: center;    
         display: block;
-        width: 230px;
+        width: 80%;
         margin: 45pt auto;
         line-height: 1.5;
     }
@@ -308,13 +308,20 @@ section.game---state {
 
 section.about--the--app {
 
-    border: solid 1px black;
+    /* border: solid 1px black; */
+    width: 640px;
+
+    @media (max-width: $breakpoint---md) {
+
+        width: 90%;
+    }
 
     #app_intro {
 
         margin: 25px auto;
         border-radius: 8px;
-        width: 500px;
+        width: 80%;
+        text-align: left;
 
         @media (max-width: $breakpoint---md) {
 
@@ -336,8 +343,9 @@ section.about--the--app {
 
     h1, h2, h3 {
 
-        margin: 0 auto;
-        width: 537px;
+        margin: 10px auto;
+        /* width: 537px; */
+        width: 80%;
         text-decoration: underline;
 
         @media (max-width: $breakpoint---md) {
@@ -348,7 +356,8 @@ section.about--the--app {
 
     p {
 
-        margin: 0 auto;
+        margin: 15px auto;
+        text-align: left;
 
         a {
 
@@ -365,7 +374,8 @@ section.about--the--app {
 
     ul {
 
-        width: 537px;
+        /*width: 537px; */
+        width: 80%;
         margin: 20px auto;
 
         @media (max-width: $breakpoint---md) {
