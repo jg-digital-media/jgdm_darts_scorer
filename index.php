@@ -55,7 +55,7 @@
 
     <header>
 
-        <h1>Darts Scorer App (AI) <span id="app_version"><a href="log.php">v1.2.2</a></span></h1>
+        <h1>Darts Scorer App (AI) <span id="app_version"><a href="log.php">v1.2.3</a></span></h1>
         <h2>by Jonnie Grieve Digital Media</h2>
         <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank" id="app_repo">Repository</a>
 

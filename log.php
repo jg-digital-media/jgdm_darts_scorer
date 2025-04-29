@@ -45,7 +45,7 @@
 
     <header>
 
-        <h1>Darts Scorer App (AI) <span id="app_version">v1.2.2</span></h1>
+        <h1>Darts Scorer App (AI) <span id="app_version">v1.2.3</span></h1>
         <h2>by Jonnie Grieve Digital Media</h2>
         <a href="https://github.com/jg-digital-media/jgdm_darts_scorer" target="_blank" id="app_repo">Repository</a>
 
@@ -56,6 +56,22 @@
         <p id="app_intro">Development log for the Darts Scorer App (AI)</p>
 
         <a href="game.php" class="button" id="btn---game--on">Game On</a>
+
+        
+        <article>
+
+            <div class="log---header">
+                <span class="log---version">v1.2.3</span>
+                <span class="log---date">28/04/2025</span>
+            </div>
+
+            <ul class="dev---log">
+
+                <li>Modified the game state to black out scoring buttons after the "Game Shot" so "busts" after the game shot are prevented.</li>         
+
+            </ul>
+
+        </article>
 
         <article>
 
