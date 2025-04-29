@@ -4,7 +4,7 @@ This is a simple web app that you can use to score your darts games.
 
 Link: https://projects.jonniegrieve.co.uk/darts_scorer_app
 
-## version 1.0 
+## version 1.2.3 
 
 ### Planning
 
@@ -28,7 +28,7 @@ Link: https://projects.jonniegrieve.co.uk/darts_scorer_app
 + change "Throw Dart" button to say "Next Visit"
 + The remaining score must be available to see at all times.
 + We still need to add a safeguard that busts a player if they try to score a 0 on a single or treble score. 
-+ BUG: We need a safeguard that guards against a player ending up on a score of 1 point remaining.
++ On player score of 1; the score is bust, turn ends immediately and the score is returned to what it was at the start of that turn. For the purpose of this app, the remainng scores are 0 for the rest of the visit.
 + BUG: Investigate this game scenario
     + This scenario needs some investigation
         + 3 Darts	2 9 13	24	477
@@ -85,6 +85,8 @@ Link: https://projects.jonniegrieve.co.uk/darts_scorer_app
 + Stylesheet developed using Sass - CSS Layout technique basics applied
                 
 + Modal styles - Generated using Cursor. - On this occasion that came at a point in my development where I'd like to start putting it online now and introduce improvements as and when they come.
+
++ BUG: We need a safeguard that guards against a player ending up on a score of 1 point remaining.
 
 ### Suggestions from Cursor AI Chat
 
