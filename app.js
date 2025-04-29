@@ -1,6 +1,6 @@
 let lastmodified = new Date();
 
-console.log("app.js - connected!" + lastmodified);
+console.log("app.js - connected - " + lastmodified);
 
 let initialScore = 501;
 let currentScore = initialScore;
@@ -290,14 +290,14 @@ function recordThrow(points) {
     const visitTotal = currentVisit.reduce((sum, score) => sum + score, 0);
     throwTotalDisplay.textContent = visitTotal;
     
-    // Check for visit total of 180
+    /* // Check for visit total of 180
     if (visitTotal === 180) {
         showGameMessage('ONE HUNDRED AND EIGHTY!!!', 3000);
     } 
     
     if (visitTotal === 100) {
         showGameMessage('TON!!!', 3000);
-    }
+    } */
      
     throwCount++;
     
@@ -318,7 +318,32 @@ function recordThrow(points) {
 
         showGameMessage('Game Shot!', 0);  // 0 duration means message stays
         recordVisitToHistory();
-        // window.location.href = 'index.php';
+
+        // Disable and hide throw dart button
+        const throwDartButton = document.querySelector('#btn---throw--dart');
+        /* throwDartButton.style.display = 'none'; */
+        throwDartButton.disabled = true;
+        throwDartButton.style.opacity = '0.5';
+         
+        // Optionally, disable score buttons too
+        /* scoreButtons.forEach(button => {
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.5';
+        }); */
+
+        // Disable all score buttons
+        document.querySelectorAll('.score---points--btn').forEach(button => {
+            
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.5';
+            button.classList.add('disabled');
+        });
+         
+        // Disable multiplier checkboxes
+        tripleCheckbox.disabled = true;
+        tripleCheckbox.style.opacity = '0.5';
+        doubleCheckbox.disabled = true;
+        doubleCheckbox.style.opacity = '0.5';
     }
 }
 
