@@ -1,25 +1,28 @@
+For the last 4 posts in this series, I've been outlining how we've been building a Darts scorer application. You can follow my progress so far using the links to previous blogs below. 
+
 From hereonin, We're going to add some UX features and bug fixes to the app.
 
-A good scoring application for Darts should have a way to suggest a checkouts.  When I was going about planning this app I was aware it was going to be the most involving part of the app - or one of the most at least. It will involve getting data from a structured source.
+A good scoring application for Darts should have a way to suggest checkouts. In darts, Checkouts are paths to victory for the player at the Oche. When I was going about planning this app, I was aware it was probably going to be the most involving part of the app, or one of the most, at least. Would it involve getting data from a structured source or some internal calculations within the app?
 
-From 2 to 170 points is a checkout score. My app will initially give options of 3 scores to get to checkout - in the following format/
+2 to 170 points is a checkout score. My app will initially give options of 3 paths to get to a checkout. It will do this in the following format.
 
-e.g. `10 6 D20`,`T20 T20 D20` or  `D19 D20 D10` where D or T tell us where trebles or Doubles are required
+e.g. `10 6 D20`,`T20 T20 D20` or  `D19 D20 D10` where D or T tell us where trebles or Doubles are required. So this is a series of up to 3 checkout suggestions which will helpfully guide those using the app to which numbers to use to get to the "Game shot".
 
-But there is also a question of how dynamic we want this to be. If a player for example fails a checkout, how do we then bring up the next available checkout suggestion? We will have to guide the player through every visit - maybe even every shot.
+But there is also a question of how dynamic we want this to be. If a player, for example, fails a checkout, how do we then bring up the next available checkout suggestion? We will have to guide the player through every visit - maybe even every shot. That's tricky because the turn-based nature of this app works every 3 shots before new scores are calculated.
 
-One idea that I had was that to suggest a checkout, could get information in a structured dataset, like a json file and display that suggestion according to the last 3 throws.
+One idea that I had was that to suggest a checkout, could get information in a structured dataset, like a JSON file and display that suggestion according to the last 3 throws.
 
-here's the HTML, I'm using
+Here's the HTML that I'm using
 
 ```HTML
 <div class="points---to--checkout">
 
-            <div id="checkout---one" class="checkout">&nbsp;</div>
-            <div id="checkout---two" class="checkout">&nbsp;</div>
-            <div id="checkout---three" class="checkout">&nbsp;</div>
+    <div id="checkout---one" class="checkout">&nbsp;</div>
+    <div id="checkout---two" class="checkout">&nbsp;</div>
+    <div id="checkout---three" class="checkout">&nbsp;</div>
 
-        </div>
+</div>
+
 ```
 
 I'll put a level 3 heading to tell the user what the numbers are all about. 
@@ -36,7 +39,7 @@ I'll put a level 3 heading to tell the user what the numbers are all about.
         </div>
 ```
 
-
+Let's see what CursorAI suggested for us in the end.
 
 ```
 PROMPT: We now need to find a way to suggest checkout pathways to zero and win a game.  
@@ -45,7 +48,7 @@ we're putting this in the .points---to--checkout" element where you'll see one e
 
 ```
 
-Now, before I try and implement the generated code, I'm going to try and inspect it and see what it might be doing. Because what I had in mind was something involving retrieving data from a source.  It makes some bold claims about it clearly believes it has implemented with its code..
+Now, before I tried to implement the generated code, I wanted to try and inspect it and see what it might be doing. Because what I had in mind was something involving retrieving data from a source, and it didn't give me that. It made some bold claims about it, clearly believes it has implemented it with its code. Here's an excerpt of what it said.
 
 ```
 Shows checkout suggestions at the start of each visit when score is between 2-170
@@ -59,9 +62,9 @@ Updates suggestions when a new visit starts
 Shows up to 3 possible checkout paths
 ```
 
-So from the sounds of things we get 3 numbers in each .checkout item rather than 1 number.
+So from the sounds of things, we get 3 numbers in each .checkout item rather than 1 number in each element. Sounding good so far
 
-`For 40: "D20", "D10 D10", "T8 D8"`
+`e.g. for 40: "D20", "D10 D10", "T8 D8"`
 
 First, what we're saying is we have a new object literal for each checkout item where we place the checkout suggestions. 
 
@@ -92,13 +95,13 @@ function getCheckoutPaths(score) {
 }
 ```
 
-in suggestCheckouts function we're clearing and getting ready for new suggestions per visit, by clearing what's there and making sure only the correct scores have checkout suggestions. 
-
+In the suggestCheckouts() function, we're clearing the previous checkouts that might have been there already and getting ready for new suggestions per visit. By clearing what's there, we're making sure only the correct scores have checkout suggestions.  Later on in the function, we're finding the 3 checkout display elements and splicing the 3 scores in each into those elements.
 
 ```javascript
 
 // Add this new function
 function suggestCheckouts(score) {
+
     // Clear previous suggestions
     checkoutDisplays.forEach(display => display.textContent = '');
     
@@ -112,7 +115,9 @@ function suggestCheckouts(score) {
 }
 ```
 
-The next function is where we're getting the checkout suggestions.
+The next function is where we're getting the checkout suggestions.  So we haven't tried to do any fetches to API's at all. It's a complex function that instead does a series of mathematical calculations to get the checkouts that we're displaying in the other function.
+
+And use an empty array to store the results of the calculations.
 
 ```javascript
 function getCheckoutPaths(score) {
@@ -170,22 +175,23 @@ Finally out these function calls in where we need them - for example  resetVisit
 
 ```
 
-one loop inside the other. 
+Putting one loop inside the other is how we get this effect to work.
 
 ```javascript
 if (score <= 170) {
-        for (let i = 20; i >= 1; i--) {
+    for (let i = 20; i >= 1; i--) {
 
         for (let j = 20; j >= 1; j--) {
 
         }
 
-        }
+    }
 
 } 
+
 ```  
 
-Now we have impleented checkout suggestions - with simple calculations without the need to use a data source such as JSON file or an API.  The latter methods are probably the best way to do it, if I;m honest.
+Now we have implemented checkout suggestions, with simple calculations without the need to use a data source such as JSON file or an API. The latter methods are probably the best way to do it, if I'm honest.
 
-And there are still some edge cases with these checkout suggestions to consider. When I was testing this implementation, I found some checkout were giving floating point values. i.e, D1.5, D0.5 etc, which is not possible in Darts. So that's a bug to fix and a tradeoff for using this approach.
+And there are still some edge cases with these checkout suggestions to consider. When I was testing this implementation, I found some checkouts were giving floating-point values. i.e, D1.5, D0.5 etc, which is not possible in Darts. So that's a bug to fix and a tradeoff for using this approach.
 
