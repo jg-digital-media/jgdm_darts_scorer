@@ -1,14 +1,19 @@
 I've tried to say many times that we're going to add some UX features and bug fixes to the app. 
 
-Let's now do it.
+So let's now do it.
 
-we're going to work on some bug fixesfor the app
+We're going to work on some bug fixes for the app
 
 
++ BUG: A player "bust" is not recorded in the throw history
 
-+ BUG: a player "bust" is not recorded in the throw history
+This is a very verbose way of describing it, but what's actually happening is that if a player scores a bust, any correct scores are not being recorded in the throw history. 
 
-This is a very verbose way of describing it, but what's actually happening is that the player if a player scores a bust, any correct scores are not being recorded in the throw history. e.g. 0 0 0 = 21. In this example, the third throw was bust. We should be therefore be seeing something more like 60 60 0 = 21. So the tally for the visit is being recored as if valid scores have been thrown but are not being displayed.
+We'd see something like this instread
+
+e.g. 0 0 0 = 21. 
+
+In this example, the third throw was bust. We should be therefore have been seeing something more like 60 60 0 = 21. So the tally for the visit is being recored as if valid scores have been thrown but are not being displayed.
 
 
 ```javascript
@@ -30,9 +35,9 @@ function recordThrow(points) {
 
 ```
 
-This in the end was one of the simpler fixes. we simply switch over the function calls so we're recording all throw results that we need to before the visit is reset. And since we know that when a bust is made, the visit to the oche ends. So it works for us.
+This, in the end, was one of the simpler fixes. We simply switch over the function calls so we're recording all throw results that we need to before the visit is reset. And since we know that when a bust is made, the visit to the oche ends. You have to get back all your points at the next visit.
 
-Now we have... throw histories correctly displayed when a bust occurs. 
+And now we have throw histories correctly displayed when a bust occurs.
 
 + BUG: throw history scores should be in correct order darts - 3 darts - 6 darts - 9 etc
 
@@ -94,10 +99,11 @@ To fix this, we need to modify the checkout logic to allow the bullseye (50) as 
 
 ```
 
-+ BUG: Some checkout suggestions are so low, they are displayed as floating point numbers. e.g. 1.5  2.5. Programatically sound,  No good for Darts
++ BUG: Some checkout suggestions are so low, they are displayed as floating point numbers. e.g. 1.5  2.5. 
 
+This may be programatically sound, but it's no good for a Darts app, so we need to look into the checkout suggestions code and manipulate the suggestions so that they don't show floating-point values.
 
-The issue seems to be found in the double double combinations 
+The issue seems to be found in the double-double combinations. 
 
 ```javascript
 // Double-Double combinations
@@ -129,12 +135,12 @@ An extra one.
 // Clear previous suggestions
 // checkoutDisplays.forEach(display => display.textContent = '');
 
+This is so we get updated checkout suggestions after each visit rather than new suggestions piling on top of each other
 
 + BUG: Some checkout suggestions are not displayed for scores of 160 or more
 
 
-
-We went through a process of elimination for this.  
+I went through a process of elimination for this.  
 
 ```javascript
 // For debugging - log scores with no checkouts
@@ -157,9 +163,9 @@ app.js:204 No checkouts found for score: 159
 app.js:204 No checkouts found for score: for 3
 
 
-It looks like the main reason for missing checkouts is we weren't checking for bull checkouts for higher scores.
+It looks like the main reason for missing checkouts is that we weren't checking for bull checkouts for higher scores.
 
-We simply added a new condition check for this when doing checkouts for triple double combinations. 
+We simply added a new condition check for this when doing checkouts for triple-double combinations. 
 
 ```javascript
 if (remainingAfterTriples > 0 && remainingAfterTriples <= 50) {
@@ -203,7 +209,7 @@ I questioned this. And this is a pitfall of AI.  It's like sometimes it develops
 
 ```
 
-I'm looking at 2 examples of Darts checkout tables taht verify that there are a handful of Darts scores that cannot be checked out.  So... this is one occasion whre I had to go online and find the answer myself rather than just trusting the AI.  Humans make mistakes and so do AIs
+I'm looking at 2 examples of Darts checkout tables that verify that there are a handful of Darts scores that cannot be checked out.  So... this is one occasion where I had to go online and find the answer myself rather than just trusting the AI.  Humans make mistakes and so does AI.
 
 http://www.darts-uk.co.uk/Checkout.html
 
@@ -211,7 +217,7 @@ http://www.darts-uk.co.uk/Checkout.html
 https://www.baractivity.com/POS-002.html
 
 
-Instrad, I'm going to follow AI's original suggestion and put a message in place for when there are no checkouts possible. 
+Instead, I'm going to follow the AI's original suggestion and put a message in place to tell people when there are no checkouts available. 
 
 ```javascript
 // List of impossible checkout scores
@@ -239,7 +245,7 @@ Do we need AI for that?
         recordVisitToHistory();
 ```
 
-Remembering also record the game set of darts so its available in the throw history.
+Remembering to also record the game set of darts so it's available in the throw history.
 
-That is a lot of bugs now sorted out. Or some way to being sorted out at the very least. We've made so much progress on checkout scores and we have a fully functional record of scores running away in the background that can now be seen at all stages of the app. 
+That is a lot of bugs now sorted out. Or some way forward to being sorted out at the very least. We've made so much progress on checkout scores, and we have a fully functional record of scores running away in the background that can now be seen at all stages of the app. 
         
