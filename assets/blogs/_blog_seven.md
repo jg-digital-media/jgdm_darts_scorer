@@ -1,8 +1,6 @@
-Let's fix up some UI improvements and finally start styling the app.
+Let's go over some UI and style improvements I made to the app.
 
-
-First, Add a home button to go back to the index.php page - rather than "Restart" button doing that job. So we will have the home button that goes to index.php and restart will start the game from the beginning.
-
+First,  I added a "home" button that takes you back to the index.php page - I'm using this rather than a "Restart" button to do that job. So we will have the home button that goes to index.php, and restart will start a new visit to the "Oche" from the beginning.
 
 ```html
     <div class="application---buttons">
@@ -11,10 +9,9 @@ First, Add a home button to go back to the index.php page - rather than "Restart
     </div>
 ```
 
-Eventually we'll need to add a reload element to the restart button. But we'll leave that for now since as we have that separation of functionality in place. 
+Eventually, we'll need to add a reload element to the restart button. But we'll leave that for now, since we have that separation of functionality that we've just put in place.
 
-I'm also going to introduce a Game Status Element. This is a container element which will contain and layout the various score and message displays. It feels like another fundamental change to the markup so I'll do this now. 
-
+I'm also going to introduce a Game Status Element. This is a container element which will contain and layout the various score and message displays. It feels like another fundamental change to the markup, so I'll do this now.
 
 ```html
 
@@ -47,7 +44,7 @@ So we're adding a new containing element for the new status elements to go on. A
 ```
 
 
-Having this new element will be a place to give game feedback such as "Game Shot!" or "Bust!", "Bullseye", "180!!!". This, I think is a better user experience than using JavaScript alerts.
+Having this new element means we have a place give game feedback, such as "Game Shot!" or "Bust!", "Bullseye", "180!!!". This, I think, is a better user experience than using JavaScript alerts.
 
 
 ```
@@ -60,11 +57,10 @@ PROMPT: We're going to improve the UI by reducing the need for JavaScript alerts
 
 </div>
 
-Having this new element will be a place to give game feedback such as "Game Shot!" or "Bust!", "Bullseye", "180!!!". 
 
 ```
 
-Cursor's reponse was to create a message display system that slowly replaces the alert() functions and puts them in the above element a new function.
+Cursor's response was to create a message display system that slowly replaces the alert() functions and puts them in the above element as a new function.
 
 ```javascript 
 
@@ -87,9 +83,9 @@ function showGameMessage(message, duration = 2000) {
 
 ```
 
-So it gives us block levelements that can be removeed after a period of time that we set. The default parameter is for 2 seconds of display which can be overridden by a passing a valuue in a function call.
+So the code above gives us block-level elements that can be removed after a period of time that we set. The default parameter is for 2 seconds of display, which can be overridden by passing a value to a function call.
 
-cruciallly messageDisplay the element item is the item element of the .display---message container so we have some control of the document flow and available space.
+Crucially, messageDisplay the element item is the item element of the .display---message container elements, which means have some control of the document flow and available space.
 
 ```javascript
 
@@ -97,20 +93,19 @@ cruciallly messageDisplay the element item is the item element of the .display--
 const messageDisplay = document.querySelector('#js-message');
 ```
 
-and then, once the function is ready we can call the function in all the relevant places.  
+And then, once the function is ready we can call the function in all the relevant places.  
 
 e.g. 
 
 ```
-recordThrow()   You can call the function in different formats as well.  
+recordThrow()   With this function all, you can call the function in different formats as well.  
 showGameMessage('You must finish on a double!'); with only a string parameter 
 showGameMessage('You must finish on a double!', 0) where we explicity state there should be no timeout duration.
 
-// Undo the throw
 
 ```
 
-In one case we use a condition statrement to provide a message for notable scores.
+In one case, we use a condition statrement to provide a message for notable scores.
 
 ```javascript
 
@@ -123,14 +118,13 @@ In one case we use a condition statrement to provide a message for notable score
         showGameMessage('Ton!');
     }
 
-    / There may be an unintended bug here with checking 50 for a bull /
+    // There may be an unintended bug here with checking 50 for a bull
 ```
 
 tally the number of darts that have been thrown per visit.  Starting at 0 and incrementing by one each time a score button has been pressed
 
 
-Tally the score for all throws in the game. as they come in.
-
+Tally the score for all throws in the game as they come in. That means each time a score button is pressed, the display counts up from 0 to 3 for each "dart thrown".
 
 
 ```html
@@ -151,27 +145,25 @@ const throwTotalDisplay = document.querySelector('#trows---total');
 
 ```    
 
-we won't forget to reset the display on each visit. 
+We won't forget to reset the display on each visit. 
 
 ```javascript
 function resetVisit() {
 
-    // more code
+    // existing code snipped
+
     throwNumberDisplay.textContent = '0';  // Reset throw counter
     
-    // more code
+    // existing code snipped
 }
 ```
 
 
 And now we have... a tally of the scores for each visit thar resets appropriately on each new visit
 
-```
-prompt: tally the number of darts that have been thrown per visit.  Starting at 0 and incrementing by one each time a score button has been pressed
 
-```
 
-Behind the scenes I added a new element to the DOM to display the total number of throws in a visit.  
+Behind the scenes, I added a new element to the DOM to display the total number of throws in a visit.  
 
 ```
 0 out of 3
@@ -179,9 +171,9 @@ Behind the scenes I added a new element to the DOM to display the total number o
 etc 
 ```
 
-Whether it was my prompt that was imperfect or the AI didn't see the element and suggested I add a new element, seemingly not understanding that I had one in place for this purpose.
+Whether it was my prompt that was imperfect, or the AI didn't see the element and suggested I add a new element, seemingly not understanding that I had one in place for this purpose.
 
-This is another pitfall you have to be aware of when you're coding with AI.  I gave it a helping hand and pointed out the throws element. 
+This is another pitfall you have to be aware of when you're coding with AI. I gave it a helping hand and pointed out the throws element. 
 
 
 ```
@@ -239,7 +231,7 @@ function recordThrow(points) {
 ----
 
 
-Add a "Quit" button to quit the game and go back to the index.php page. - This will be a good way to exit the 
+Add a "Quit" button to quit the game and go back to the index.php page. - This will be a good way to exit app when we're finished playing our Darts games. 
 
 ```
 PROMPT: Add a "Quit" button to quit the game on the moment of "game shot" which when clicked will go back to the index.php page. - This will be a good way to exit the app there and then in addition to the home button. 
@@ -266,16 +258,16 @@ if (message === 'Game Shot!') {
 
 
 
-This, I think is a wrap for the main application development.  I may add one last blog for the CSS and some more UX.  But we've done the bulk of the development in these last couple of weeks. 
+This, I think, is a wrap for the main application development.  I may add one last blog for the CSS and some more UX.  But we've done the bulk of the development in these last couple of weeks. 
 
-So how was it?  
+So, how was it?  
 
-Everything about this process has been what I wanted ity to be.  I was excited about it from the moment I came up with the idea.    
+Everything about this process has been what I wanted it to be.  I was excited about it from the moment I came up with the idea.    
 
-And I knew from a personal point of view that the only way I could get anywhere with this project was to work with AI.  Cursor Ai Was merely the tool I used to do it.
+And I knew from a personal point of view that the only way I could get anywhere with this project was to work with AI.  Cursor Ai was merely the tool I used to do it.
 
-So for me it's about Wireframing to come up with a User interface; building the markup so I can then present that context to Cursor; and then learning how to prompt Cursor to do the work of implementing the front end capabilities.
+So for me it's about Wireframing to come up with a User interface; building the markup so I can then present that context to Cursor; and then learning how to prompt Cursor to do the work of implementing the front-end capabilities.
 
 It's been a real thrill to do this and I've learned a lot.
 
-I have learning difficulties. It doesn't matter how many times I approach a brief and think about it... the brain mattter just doesn't come to play that allows me to convert a problem into a solution with code. But the solutona that Cursor provides iwith the sonnet LLM I can read it and then my coding experience comes into play.
+I have learning difficulties. It doesn't matter how many times I approach a brief and think about it... the brain matter just doesn't come to play, which allows me to convert a problem into a solution with code. But the solution that Cursor provides with the sonnet LLM, I can read it, and then my coding experience comes into play.
